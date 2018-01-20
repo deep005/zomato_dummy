@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootstrap 4 starter pack</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="main-container container-fluid">
+        <div class="row" style="margin: 0; padding:0">
+            <div class="col-5 col-xl-6 map-container">
+                <input id="location-input" class="controls" type="text"
+                       placeholder="Enter a location">
+                <div id="map"></div>
+            </div>
+            <div class="col-7 col-xl-6 details-container">
+                <div class="hotel-details">
+                    <div class="row no-gutters top-section">
+                        <div class="col-11 image-container mx-auto">
+                            <div class="card restaurant-image">
+                                <div class="card-body details">
+                                    <figure class="meal-photo">
+                                        <img id="featured_image" src="./dummy_image.jpg"
+                                             alt="card-img">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutters bottom-section">
+                        <div class="col-11 col-lg-7 mx-auto">
+                            <div class="card hotel-data">
+                                <div class="card-body details">
+                                    <div class="row no-gutters">
+                                        <div class="col-4">
+                                                <img id="thumbnail-image" src="./dummy_thumbnail.jpg"
+                                                     alt="card-img">
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="name text-danger" id="name">Happy Restaurant</div>
+                                            <p class="address text-muted" id="address">88/1 Sarjapur Road, Opposite Jakkasandra Bus Stop, Koramangala 1st Block, Bangalore</p>
+                                            <p class="cuisines" id="cuisines">North Indian, Chinese</p>
+                                            <p class="cost" id="cost">Cost Rs.400 for two</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer booking" id="booking">
+                                    <a href="#" class="booking-url float-right" id="url" target="_blank"> Open Website</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-11 col-lg-4 mx-auto">
+                            <div class="card star-rating">
+                                <div class="card-body details">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAXoWvI9mQ5RlE7VcKTVqV_wFF79Pb_Ps&v=3&libraries=places&callback=initMap"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "bs4_starter",
+  "version": "1.0.0",
+  "description": "Zomato-dummy",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "deep05",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "4.0.0-beta",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.5"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.13",
+    "browserify": "^15.2.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  }
+}
