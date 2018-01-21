@@ -1,72 +1,77 @@
 let markers = [];
+let map;
 var initMap = function() {
-    let map;
-    
-    var latitude, longitude;
 
-    
-    navigator.geolocation.getCurrentPosition(function (position) {
-        latitude = position.coords.latitude;
-        longitude = position.coords.longitude;
-    
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: latitude, lng: longitude},
-            zoom: 11
+    let latitude, longitude;
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function (position) {
+            latitude = position.coords.latitude;
+            longitude = position.coords.longitude;
+
+            createMap(latitude, longitude);
         });
-        var image = './../images/person.png';
-        let homeMarker = new google.maps.Marker({
-            position: {lat: latitude, lng: longitude},
+    } else{
+        createMap(19.0760, 72.8777);
+    }
+};
+function createMap(latitude, longitude){
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: latitude, lng: longitude},
+        zoom: 11
+    });
+    var image = './../images/person.png';
+    let homeMarker = new google.maps.Marker({
+        position: {lat: latitude, lng: longitude},
+        map: map,
+        icon: image
+    });
+
+    let runnerObj = {
+        latInt: parseInt(latitude),
+        longInt: parseInt(longitude),
+        map: map,
+        latitude: latitude.toPrecision(6),
+        longitude: longitude.toPrecision(6)
+    };
+    runner(runnerObj);
+    var input = document.getElementById('location-input');
+
+    let autocomplete = new google.maps.places.Autocomplete(input);
+    autocomplete.bindTo('bounds', map);
+
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+    autocomplete.addListener('place_changed', function() {
+        homeMarker.setMap(null);
+
+        let place = autocomplete.getPlace();
+        if (!place.geometry) {
+            return;
+        }
+
+        map.setCenter(place.geometry.location);
+        map.setZoom(14);
+        let place_lat = place.geometry.location.lat(), place_lng = place.geometry.location.lng();
+        homeMarker = new google.maps.Marker({
+            position: {lat: place_lat, lng: place_lng},
             map: map,
             icon: image
         });
-    
-        let runnerObj = {
-            latInt: parseInt(latitude),
-            longInt: parseInt(longitude),
+        let ConfigObj = {
+            latInt: parseInt(place_lat),
+            longInt: parseInt(place_lng),
             map: map,
-            latitude: latitude.toPrecision(6),
-            longitude: longitude.toPrecision(6)
+            latitude: place_lat.toPrecision(6),
+            longitude: place_lng.toPrecision(6)
         };
-        runner(runnerObj);
-        var input = document.getElementById('location-input');
-    
-        let autocomplete = new google.maps.places.Autocomplete(input);
-        autocomplete.bindTo('bounds', map);
-    
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-    
-        autocomplete.addListener('place_changed', function() {
-            homeMarker.setMap(null);
-    
-            let place = autocomplete.getPlace();
-            if (!place.geometry) {
-                return;
-            }
-    
-            map.setCenter(place.geometry.location);
-            map.setZoom(14);
-            let place_lat = place.geometry.location.lat(), place_lng = place.geometry.location.lng();
-            homeMarker = new google.maps.Marker({
-                position: {lat: place_lat, lng: place_lng},
-                map: map,
-                icon: image
-            });
-            let ConfigObj = {
-                latInt: parseInt(place_lat),
-                longInt: parseInt(place_lng),
-                map: map,
-                latitude: place_lat.toPrecision(6),
-                longitude: place_lng.toPrecision(6)
-            };
-            runner(ConfigObj);
-        });
-    
+        runner(ConfigObj);
     });
-};
+
+}
 async function runner(runnerObj){
 
-    console.log(runnerObj);
-    
+
     if(markers.length){
         for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(null);
@@ -83,7 +88,6 @@ async function runner(runnerObj){
         "collection_id": 1
     };
     let result = await getHotelDetails(hotelsSearchObj).then((data) => data);
-    console.log(result);
     let j=1;
     result.restaurants.forEach((obj)=>{
         let item = {
@@ -114,15 +118,12 @@ async function runner(runnerObj){
     });
 
     for(let i=0; i<locations.length; i++){
-        console.log(locations[i].location.lat);
         if(parseInt(locations[i].location.lat) !== runnerObj.latInt || parseInt(locations[i].location.lng) !== runnerObj.longInt){
             locations.splice(i, 1);
             hotelDetails.splice(i, 1);
             i--;
         }
     }
-    console.log(locations);
-    console.log(hotelDetails);
     var largeInfowindow = new google.maps.InfoWindow();
     var bounds = new google.maps.LatLngBounds();
 
@@ -154,8 +155,6 @@ async function runner(runnerObj){
     }
 }
 function renderDetails(marker){
-    debugger;
-    console.log(marker);
     if(marker.restaurant.image != "") {
         document.getElementById("featured_image").src = marker.restaurant.image;
     }else{
@@ -166,14 +165,18 @@ function renderDetails(marker){
     }else{
         document.getElementById("thumbnail-image").src = "./../images/dummy_thumbnail.jpg";
     }
-    if(marker.restaurant.title.length > 25){
-        document.getElementById("name").innerHTML = marker.restaurant.title.substring(0,25) + "..";
+    if(marker.restaurant.title.length > 18){
+        document.getElementById("name").innerHTML = marker.restaurant.title.substring(0,18) + "..";
     }
     else{
         document.getElementById("name").innerHTML = marker.restaurant.title;
     }
     if(marker.restaurant.address.length > 30){
-        document.getElementById("address").innerHTML = marker.restaurant.address.substring(0,30) + "..";
+        if(marker.restaurant.title.length < 18){
+            document.getElementById("address").innerHTML = marker.restaurant.address.substring(0,40) + "..";
+        }else {
+            document.getElementById("address").innerHTML = marker.restaurant.address.substring(0, 30) + "..";
+        }
     }
     else{
         document.getElementById("address").innerHTML = marker.restaurant.address;
@@ -223,7 +226,6 @@ function getHotelDetails(hotelsSearchObj){
             url = 'https://developers.zomato.com/api/v2.1/search?' + query;
             return url;
         }).then((url) => {
-            console.log(url);
             fetch(url, {
                 method: 'GET',
                 headers: new Headers({

@@ -36,19 +36,7 @@ gulp.task('serve', ['sass'], function(){
     gulp.watch("src/*.html").on('change',browserSync.reload);
 });
 
-// move fonts folder to src
 
-gulp.task('fonts', function(){
-   return gulp.src('node_modules/font-awesome/fonts/*')
-       .pipe(gulp.dest("src/fonts"));
-});
-
-// move fonts folder to src
-
-gulp.task('fa', function(){
-    return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
-        .pipe(gulp.dest("src/css"));
-});
 
 // compress images
 gulp.task('compress-images', function(){
@@ -57,4 +45,4 @@ gulp.task('compress-images', function(){
         .pipe(gulp.dest("src/images"));
 });
 
-gulp.task('default',['compress-images','js','serve','fa','fonts']);
+gulp.task('default',['compress-images','js','serve']);
