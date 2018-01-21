@@ -1,12 +1,16 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+const imagemin  = require('gulp-imagemin');
+const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 
 // compile sass and inject into browser
 
 gulp.task('sass', function(){
     return gulp.src(['node_modules/bootstrap/scss/bootstrap.scss','src/scss/*.scss'])
-        .pipe(sass())
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest("src/css"))
         .pipe(browserSync.stream());
 });
@@ -15,7 +19,7 @@ gulp.task('sass', function(){
 
 
 gulp.task('js', function(){
-    return gulp.src(['node_modules/bootstrap/dist/js/bootstrap.min.js'])
+    return gulp.src(['src/js/main.js'])
         .pipe(gulp.dest("src/js"))
         .pipe(browserSync.stream());
 });
@@ -45,6 +49,12 @@ gulp.task('fa', function(){
     return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
         .pipe(gulp.dest("src/css"));
 });
-//
 
-gulp.task('default',['js','serve','fa','fonts']);
+// compress images
+gulp.task('compress-images', function(){
+    return gulp.src('pre-images/*')
+        .pipe(imagemin({ progressive: true}))
+        .pipe(gulp.dest("src/images"));
+});
+
+gulp.task('default',['compress-images','js','serve','fa','fonts']);

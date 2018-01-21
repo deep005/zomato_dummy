@@ -26,38 +26,43 @@ $break-rating2: 620px;
 }
 html, body , .main-container{
   @include default-setting;
-  .map-container{
+  .map-row {
     margin: 0;
-    padding: 0;
-    .controls {
-      background-color: #fff;
-      border-radius: 2px;
-      border: 1px solid transparent;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      box-sizing: border-box;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 15px;
-      font-weight: 300;
-      height: 29px;
-      margin-left: 17px;
-      margin-top: 10px;
-      outline: none;
-      padding: 0 11px 0 13px;
-      text-overflow: ellipsis;
-      width: 400px;
-    }
-    #map{
-      @include default-setting;
-      box-shadow: 3px 0px 3px 0px rgba(194,183,183,1);
-      height: 100vh;
+    padding:0;
+    .map-container {
+      margin: 0;
+      padding: 0;
+      .controls {
+        background-color: #fff;
+        border-radius: 2px;
+        border: 1px solid transparent;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        box-sizing: border-box;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        height: 29px;
+        margin-left: 17px;
+        margin-top: 10px;
+        outline: none;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+      #map {
+        @include default-setting;
+        box-shadow: 3px 0px 3px 0px rgba(194, 183, 183, 1);
+        height: 100vh;
+      }
     }
   }
   .details-container{
     padding-left:3px;
     padding-right: 0px;
     .hotel-details{
+      background-color: #2cd675;
       height:100vh;
-      background-color: #ffffff;
+      //background-color: #ffffff;
       .top-section {
         height: 60vh;
         @media screen and (max-width: $break-font2) {
@@ -167,7 +172,7 @@ html, body , .main-container{
               }
             }
             .name{
-              font-size: 1.7vw;
+              font-size: 1.85vw;
               padding-left: 10px;
               @media screen and (max-width: $break-font1) {
                 font-size: 1.8vw;
@@ -230,7 +235,7 @@ html, body , .main-container{
           .booking{
             transition: transform 0.5s, color 0.5s;
             &:hover{
-              background-color: #099e44;
+              background-color: #da072e;
               .booking-url {
                 color: #ffffff;
               }
@@ -248,6 +253,7 @@ html, body , .main-container{
           height: 37vh;
           max-height: 37vh;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          //background-color: #59d3b2;
           .rating-details{
             height: 5%;
             display: block;

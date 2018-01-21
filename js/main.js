@@ -1,3 +1,36 @@
+let createURL = function (position) {
+    let esc = encodeURIComponent;
+    return new Promise(function (resolve) {
+        resolve(Object.keys(position)
+            .map(function (k) {
+                return esc(k) + '=' + esc(position[k])
+            }).join('&'))
+    })
+};
+function getHotelDetails(hotelsSearchObj){
+    let url;
+    return new Promise((resolve, reject) => {
+        createURL(hotelsSearchObj).then((query)=> {
+            url = 'https://developers.zomato.com/api/v2.1/search?' + query;
+            return url;
+        }).then((url) => {
+            console.log(url);
+            fetch(url, {
+                method: 'GET',
+                headers: new Headers({
+                    'user-key': '3ee96372b5c0235a94ca049acad2ea71',
+                    'content-type': 'application/json'
+                })
+            }).then((res) => {
+                var data =res.json();
+                resolve(data);
+            }).catch((err) => {
+                reject(err);
+            })
+        });
+    })
+}
+
 let markers = [];
 var initMap = function() {
     let map;
@@ -166,18 +199,8 @@ function renderDetails(marker){
     }else{
         document.getElementById("thumbnail-image").src = "./../images/dummy_thumbnail.jpg";
     }
-    if(marker.restaurant.title.length > 25){
-        document.getElementById("name").innerHTML = marker.restaurant.title.substring(0,25) + "..";
-    }
-    else{
-        document.getElementById("name").innerHTML = marker.restaurant.title;
-    }
-    if(marker.restaurant.address.length > 30){
-        document.getElementById("address").innerHTML = marker.restaurant.address.substring(0,30) + "..";
-    }
-    else{
-        document.getElementById("address").innerHTML = marker.restaurant.address;
-    }
+    document.getElementById("name").innerHTML = marker.restaurant.title;
+    document.getElementById("address").innerHTML = marker.restaurant.address;
     document.getElementById("cuisines").innerHTML = marker.restaurant.cuisines;
     document.getElementById("cost").innerHTML = "Cost "+marker.restaurant.currency +
         marker.restaurant.cost_for_two+ " for two";

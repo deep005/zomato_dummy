@@ -1,11 +1,9 @@
-This is a starter pack for the new bootstrap-4.0.0-beta.
+This is dummy app of Zomato
 
-just clone the repository and use - npm install
- to install the dependencies.
- 
- then use npm start to run the server.
+Run npm install to install the dependencies.
+
+ Then use npm start to run the server.
  
  I have used browserSync in this project so all the live changes are reflected back on the browser.
  
- Just plug and play.
-  
+ Just plug in and play.

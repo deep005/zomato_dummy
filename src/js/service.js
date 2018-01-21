@@ -30,4 +30,3 @@ function getHotelDetails(hotelsSearchObj){
         });
     })
 }
-module.exports = {getHotelDetails};
