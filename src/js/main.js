@@ -20,7 +20,7 @@ function createMap(latitude, longitude){
         center: {lat: latitude, lng: longitude},
         zoom: 11
     });
-    var image = './../images/person.png';
+    var image = './../images/person.min.png';
     let homeMarker = new google.maps.Marker({
         position: {lat: latitude, lng: longitude},
         map: map,
@@ -69,6 +69,8 @@ function createMap(latitude, longitude){
     });
 
 }
+
+//async function for calling the api
 async function runner(runnerObj){
 
 
@@ -117,6 +119,7 @@ async function runner(runnerObj){
         hotelDetails.push(data);
     });
 
+    // serializing the input in-case of rogue data returned by the api
     for(let i=0; i<locations.length; i++){
         if(parseInt(locations[i].location.lat) !== runnerObj.latInt || parseInt(locations[i].location.lng) !== runnerObj.longInt){
             locations.splice(i, 1);
@@ -139,7 +142,7 @@ async function runner(runnerObj){
                  animation: google.maps.Animation.DROP,
                  id: i,
                  restaurant: hotelDetails[i],
-                 icon: './../images/restaurant.png'
+                 icon: './../images/restaurant.min.png'
              });
              markers.push(marker);
              bounds.extend(marker.position);
@@ -158,12 +161,12 @@ function renderDetails(marker){
     if(marker.restaurant.image != "") {
         document.getElementById("featured_image").src = marker.restaurant.image;
     }else{
-        document.getElementById("featured_image").src = "./../images/dummy_image.jpg";
+        document.getElementById("featured_image").src = "./../images/dummy_image.min.jpg";
     }
     if(marker.restaurant.thumbnail != "") {
         document.getElementById("thumbnail-image").src = marker.restaurant.image;
     }else{
-        document.getElementById("thumbnail-image").src = "./../images/dummy_thumbnail.jpg";
+        document.getElementById("thumbnail-image").src = "./../images/dummy_thumbnail.min.jpg";
     }
     if(marker.restaurant.title.length > 18){
         document.getElementById("name").innerHTML = marker.restaurant.title.substring(0,18) + "..";

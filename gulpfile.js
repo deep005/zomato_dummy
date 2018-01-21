@@ -42,6 +42,7 @@ gulp.task('serve', ['sass'], function(){
 gulp.task('compress-images', function(){
     return gulp.src('pre-images/*')
         .pipe(imagemin({ progressive: true}))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest("src/images"));
 });
 
