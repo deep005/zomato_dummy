@@ -62,7 +62,6 @@ html, body , .main-container{
     .hotel-details{
       background-color: #2cd675;
       height:100vh;
-      //background-color: #ffffff;
       .top-section {
         height: 60vh;
         @media screen and (max-width: $break-font2) {
@@ -180,9 +179,6 @@ html, body , .main-container{
               @media screen and (max-width: $break-font2) {
                 font-size: 3.0vw;
               }
-              /*@media screen and (max-width: $break-font3) {
-                font-size: 3.0vw;
-              }*/
               @media screen and (max-width: $break-details-card1){
                 font-size: 3.0vw;
               }
@@ -203,9 +199,6 @@ html, body , .main-container{
               @media screen and (max-width: $break-font2) {
                 font-size: 1.5vw;
               }
-              /*@media screen and (max-width: $break-font3) {
-                font-size: 1.5vw;
-              }*/
               @media screen and (max-width: $break-details-card1){
                 font-size: 1.5vw;
               }
@@ -254,7 +247,6 @@ html, body , .main-container{
           height: 37vh;
           max-height: 37vh;
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-          //background-color: #59d3b2;
           .rating-details{
             height: 5%;
             display: block;
@@ -377,9 +369,6 @@ html, body , .main-container{
             height: 26vh;
             max-height: 28vh;
           }
-          /*@media screen and (max-width: $break-details-card1) {
-            margin-top: 37px;
-          }*/
         }
       }
     }
