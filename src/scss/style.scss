@@ -8,6 +8,9 @@ $break-details-card1: 743px;
 $break-font4: 688px;
 $break-image2: 670px;
 $break-font5: 600px;
+$break-rating1: 770px;
+$break-image3: 640px;
+$break-rating2: 620px;
 @mixin default-setting{
   margin: 0;
   padding: 0;
@@ -58,17 +61,29 @@ html, body , .main-container{
       .top-section {
         height: 60vh;
         @media screen and (max-width: $break-font2) {
-          max-height: 40vh;
+          max-height: 34vh;
+        }
+        @media screen and (max-width: $break-image2) {
+          height: 34vh;
+          max-height: 34vh;
         }
         .image-container{
           margin-top: 30px;
           @media screen and (max-width: $break-font2) {
+            margin-top: 15px;
+            margin-bottom: 15px;
+          }
+          @media screen and (max-width: $break-image2) {
             margin-top: 10px;
+            margin-bottom: 10px;
           }
           .restaurant-image {
             max-height: 50vh;
             @media screen and (max-width: $break-font2) {
-              max-height: 35vh;
+              max-height: 32vh;
+            }
+            @media screen and (max-width: $break-image2) {
+              max-height: 33vh;
             }
             .details {
               padding: 0;
@@ -88,8 +103,8 @@ html, body , .main-container{
                   height: 50vh;
                   max-height: 50vh;
                   @media screen and (max-width: $break-font2) {
-                    height: 35vh;
-                    max-height: 35vh;
+                    height: 30vh;
+                    max-height: 30vh;
                   }
                   &:hover{
                     opacity: 1;
@@ -111,6 +126,7 @@ html, body , .main-container{
         .hotel-data{
           height: 37vh;
           max-height: 37vh;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
           .details{
             #thumbnail-image {
               border-radius: 2px;
@@ -126,10 +142,10 @@ html, body , .main-container{
                 max-width: 130px;
               }
               @media screen and (max-width: $break-image1){
-                height: 115px;
-                width: 115px;
-                max-height: 115px;
-                max-width: 115px;
+                height: 120px;
+                width: 120px;
+                max-height: 120px;
+                max-width: 120px;
               }
               @media screen and (max-width: $break-details-card1){
                 height: 106px;
@@ -143,7 +159,7 @@ html, body , .main-container{
                 max-height: 101px;
                 max-width: 101px;
               }
-              @media screen and (max-width: $break-image1){
+              @media screen and (max-width: $break-image3){
                 height: 90px;
                 width: 90px;
                 max-height: 90px;
@@ -159,12 +175,9 @@ html, body , .main-container{
               @media screen and (max-width: $break-font2) {
                 font-size: 3.0vw;
               }
-              @media screen and (max-width: $break-font3) {
-                font-size: 3.22vw;
-              }
-              @media screen and (max-width: $break-font3) {
-                font-size: 3.1vw;
-              }
+              /*@media screen and (max-width: $break-font3) {
+                font-size: 3.0vw;
+              }*/
               @media screen and (max-width: $break-details-card1){
                 font-size: 3.0vw;
               }
@@ -185,12 +198,9 @@ html, body , .main-container{
               @media screen and (max-width: $break-font2) {
                 font-size: 1.5vw;
               }
-              @media screen and (max-width: $break-font3) {
-                font-size: 1.72vw;
-              }
-              @media screen and (max-width: $break-font3) {
-                font-size: 1.6vw;
-              }
+              /*@media screen and (max-width: $break-font3) {
+                font-size: 1.5vw;
+              }*/
               @media screen and (max-width: $break-details-card1){
                 font-size: 1.5vw;
               }
@@ -206,8 +216,8 @@ html, body , .main-container{
             }
           }
           @media screen and (max-width: $break-font2) {
-            height: 40vh;
-            max-height: 40vh;
+            height: 37vh;
+            max-height: 37vh;
           }
           @media screen and (max-width: $break-details-card1) {
             height: 35vh;
@@ -232,6 +242,137 @@ html, body , .main-container{
               text-align: right;
             }
           }
+        }
+        .ratings{
+          position: relative;
+          height: 37vh;
+          max-height: 37vh;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          .rating-details{
+            height: 5%;
+            display: block;
+            .title{
+              font-size: 1.7vw;
+              @media screen and (max-width: $break-font1) {
+                font-size: 1.8vw;
+              }
+              @media screen and (max-width: $break-font2) {
+                font-size: 2.2vw;
+              }
+              @media screen and (max-width: $break-image1) {
+                font-size: 2.5vw;
+              }
+              @media screen and (max-width: $break-details-card1){
+                font-size: 3.0vw;
+              }
+              @media screen and (max-width: $break-image3) {
+                font-size: 3.2vw;
+              }
+              @media screen and (max-width: $break-font5) {
+                font-size: 3.4vw;
+              }
+            }
+            .ratings-row{
+              min-height: 70%;
+              margin-top: 8%;
+              @media screen and (max-width: $break-font2) {
+                min-height: 44%;
+                margin-top:0;
+              }
+              @media screen and (max-width: $break-details-card1) {
+                min-height: 66%;
+              }
+              @media screen and (max-width: $break-image2) {
+                min-height: 70%;
+              }
+              .ratings-container {
+                height: 100%;
+                width: 82%;
+                border: 1px solid black;
+                border-radius: 50%;
+                position: relative;
+                margin: 0 auto;
+                @media screen and (max-width: $break-font2) {
+                  height: 110%;
+                  width: 21%;
+                }
+                @media screen and (max-width: $break-rating1) {
+                  height: 114%;
+                }
+                @media screen and (max-width: $break-details-card1) {
+                  width: 25%;
+                }
+                @media screen and (max-width: $break-image2) {
+                  height: 108%;
+                  width: 30%;
+                }
+                @media screen and (max-width: $break-rating2) {
+                  width: 34%;
+                }
+                .star-rating{
+                  text-align: center;
+                  font-size: 390%;
+                  padding-top: 17%;
+                  color:  #dc3545;
+                  @media screen and (max-width: $break-font2) {
+                    font-size: 300%;
+                  }
+                  @media screen and (max-width: $break-font3) {
+                    font-size: 250%;
+                  }
+                  @media screen and (max-width: $break-rating1) {
+                    font-size: 225%;
+                  }
+                  @media screen and (max-width: $break-image2) {
+                    font-size: 237%;
+                    padding-top: 22%;
+                  }
+                  @media screen and (max-width: $break-rating2) {
+                    font-size: 244%;
+                    padding-top: 19%;
+                  }
+                }
+              }
+            }
+          }
+          .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(50, 50, 50, .65);
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease;
+          }
+          &:hover{
+            .overlay{
+              height: 100%;
+            }
+          }
+          .text-container{
+            color: white;
+            font-size: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+          }
+          @media screen and (max-width: $break-font2) {
+            margin-top: 20px;
+            height: 23.8vh;
+            max-height: 25vh;
+          }
+          @media screen and (max-width: $break-image2) {
+            height: 26vh;
+            max-height: 28vh;
+          }
+          /*@media screen and (max-width: $break-details-card1) {
+            margin-top: 37px;
+          }*/
         }
       }
     }

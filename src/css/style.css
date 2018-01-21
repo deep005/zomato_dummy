@@ -37,17 +37,29 @@ html, body, .main-container {
         height: 60vh; }
         @media screen and (max-width: 991.98px) {
           html .details-container .hotel-details .top-section, body .details-container .hotel-details .top-section, .main-container .details-container .hotel-details .top-section {
-            max-height: 40vh; } }
+            max-height: 34vh; } }
+        @media screen and (max-width: 670px) {
+          html .details-container .hotel-details .top-section, body .details-container .hotel-details .top-section, .main-container .details-container .hotel-details .top-section {
+            height: 34vh;
+            max-height: 34vh; } }
         html .details-container .hotel-details .top-section .image-container, body .details-container .hotel-details .top-section .image-container, .main-container .details-container .hotel-details .top-section .image-container {
           margin-top: 30px; }
           @media screen and (max-width: 991.98px) {
             html .details-container .hotel-details .top-section .image-container, body .details-container .hotel-details .top-section .image-container, .main-container .details-container .hotel-details .top-section .image-container {
-              margin-top: 10px; } }
+              margin-top: 15px;
+              margin-bottom: 15px; } }
+          @media screen and (max-width: 670px) {
+            html .details-container .hotel-details .top-section .image-container, body .details-container .hotel-details .top-section .image-container, .main-container .details-container .hotel-details .top-section .image-container {
+              margin-top: 10px;
+              margin-bottom: 10px; } }
           html .details-container .hotel-details .top-section .image-container .restaurant-image, body .details-container .hotel-details .top-section .image-container .restaurant-image, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image {
             max-height: 50vh; }
             @media screen and (max-width: 991.98px) {
               html .details-container .hotel-details .top-section .image-container .restaurant-image, body .details-container .hotel-details .top-section .image-container .restaurant-image, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image {
-                max-height: 35vh; } }
+                max-height: 32vh; } }
+            @media screen and (max-width: 670px) {
+              html .details-container .hotel-details .top-section .image-container .restaurant-image, body .details-container .hotel-details .top-section .image-container .restaurant-image, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image {
+                max-height: 33vh; } }
             html .details-container .hotel-details .top-section .image-container .restaurant-image .details, body .details-container .hotel-details .top-section .image-container .restaurant-image .details, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image .details {
               padding: 0; }
               html .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo, body .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo {
@@ -67,8 +79,8 @@ html, body, .main-container {
                   max-height: 50vh; }
                   @media screen and (max-width: 991.98px) {
                     html .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo #featured_image, body .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo #featured_image, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo #featured_image {
-                      height: 35vh;
-                      max-height: 35vh; } }
+                      height: 30vh;
+                      max-height: 30vh; } }
                   html .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo #featured_image:hover, body .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo #featured_image:hover, .main-container .details-container .hotel-details .top-section .image-container .restaurant-image .details .meal-photo #featured_image:hover {
                     opacity: 1;
                     -webkit-transform: scale(1.03);
@@ -81,7 +93,8 @@ html, body, .main-container {
             height: 60vh; } }
         html .details-container .hotel-details .bottom-section .hotel-data, body .details-container .hotel-details .bottom-section .hotel-data, .main-container .details-container .hotel-details .bottom-section .hotel-data {
           height: 37vh;
-          max-height: 37vh; }
+          max-height: 37vh;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); }
           html .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, body .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, .main-container .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image {
             border-radius: 2px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
@@ -97,10 +110,10 @@ html, body, .main-container {
                 max-width: 130px; } }
             @media screen and (max-width: 830px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, body .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, .main-container .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image {
-                height: 115px;
-                width: 115px;
-                max-height: 115px;
-                max-width: 115px; } }
+                height: 120px;
+                width: 120px;
+                max-height: 120px;
+                max-width: 120px; } }
             @media screen and (max-width: 743px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, body .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, .main-container .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image {
                 height: 106px;
@@ -113,7 +126,7 @@ html, body, .main-container {
                 width: 101px;
                 max-height: 101px;
                 max-width: 101px; } }
-            @media screen and (max-width: 830px) {
+            @media screen and (max-width: 640px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, body .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image, .main-container .details-container .hotel-details .bottom-section .hotel-data .details #thumbnail-image {
                 height: 90px;
                 width: 90px;
@@ -121,19 +134,16 @@ html, body, .main-container {
                 max-width: 90px; } }
           html .details-container .hotel-details .bottom-section .hotel-data .details .name, body .details-container .hotel-details .bottom-section .hotel-data .details .name, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .name {
             font-size: 1.7vw;
-            padding-left: 10px; }
+            padding-left: 10px;
+            /*@media screen and (max-width: $break-font3) {
+                font-size: 3.0vw;
+              }*/ }
             @media screen and (max-width: 1199.98px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details .name, body .details-container .hotel-details .bottom-section .hotel-data .details .name, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .name {
                 font-size: 1.8vw; } }
             @media screen and (max-width: 991.98px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details .name, body .details-container .hotel-details .bottom-section .hotel-data .details .name, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .name {
                 font-size: 3.0vw; } }
-            @media screen and (max-width: 880px) {
-              html .details-container .hotel-details .bottom-section .hotel-data .details .name, body .details-container .hotel-details .bottom-section .hotel-data .details .name, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .name {
-                font-size: 3.22vw; } }
-            @media screen and (max-width: 880px) {
-              html .details-container .hotel-details .bottom-section .hotel-data .details .name, body .details-container .hotel-details .bottom-section .hotel-data .details .name, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .name {
-                font-size: 3.1vw; } }
             @media screen and (max-width: 743px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details .name, body .details-container .hotel-details .bottom-section .hotel-data .details .name, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .name {
                 font-size: 3.0vw; } }
@@ -146,19 +156,16 @@ html, body, .main-container {
           html .details-container .hotel-details .bottom-section .hotel-data .details .address, html .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, html .details-container .hotel-details .bottom-section .hotel-data .details .cost, body .details-container .hotel-details .bottom-section .hotel-data .details .address, body .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, body .details-container .hotel-details .bottom-section .hotel-data .details .cost, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .address, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cost {
             font-size: 0.9vw;
             margin-bottom: 2px;
-            padding-left: 10px; }
+            padding-left: 10px;
+            /*@media screen and (max-width: $break-font3) {
+                font-size: 1.5vw;
+              }*/ }
             @media screen and (max-width: 1199.98px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details .address, html .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, html .details-container .hotel-details .bottom-section .hotel-data .details .cost, body .details-container .hotel-details .bottom-section .hotel-data .details .address, body .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, body .details-container .hotel-details .bottom-section .hotel-data .details .cost, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .address, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cost {
                 font-size: 1.1vw; } }
             @media screen and (max-width: 991.98px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details .address, html .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, html .details-container .hotel-details .bottom-section .hotel-data .details .cost, body .details-container .hotel-details .bottom-section .hotel-data .details .address, body .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, body .details-container .hotel-details .bottom-section .hotel-data .details .cost, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .address, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cost {
                 font-size: 1.5vw; } }
-            @media screen and (max-width: 880px) {
-              html .details-container .hotel-details .bottom-section .hotel-data .details .address, html .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, html .details-container .hotel-details .bottom-section .hotel-data .details .cost, body .details-container .hotel-details .bottom-section .hotel-data .details .address, body .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, body .details-container .hotel-details .bottom-section .hotel-data .details .cost, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .address, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cost {
-                font-size: 1.72vw; } }
-            @media screen and (max-width: 880px) {
-              html .details-container .hotel-details .bottom-section .hotel-data .details .address, html .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, html .details-container .hotel-details .bottom-section .hotel-data .details .cost, body .details-container .hotel-details .bottom-section .hotel-data .details .address, body .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, body .details-container .hotel-details .bottom-section .hotel-data .details .cost, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .address, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cost {
-                font-size: 1.6vw; } }
             @media screen and (max-width: 743px) {
               html .details-container .hotel-details .bottom-section .hotel-data .details .address, html .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, html .details-container .hotel-details .bottom-section .hotel-data .details .cost, body .details-container .hotel-details .bottom-section .hotel-data .details .address, body .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, body .details-container .hotel-details .bottom-section .hotel-data .details .cost, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .address, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cuisines, .main-container .details-container .hotel-details .bottom-section .hotel-data .details .cost {
                 font-size: 1.5vw; } }
@@ -173,8 +180,8 @@ html, body, .main-container {
                 font-size: 1.64vw; } }
           @media screen and (max-width: 991.98px) {
             html .details-container .hotel-details .bottom-section .hotel-data, body .details-container .hotel-details .bottom-section .hotel-data, .main-container .details-container .hotel-details .bottom-section .hotel-data {
-              height: 40vh;
-              max-height: 40vh; } }
+              height: 37vh;
+              max-height: 37vh; } }
           @media screen and (max-width: 743px) {
             html .details-container .hotel-details .bottom-section .hotel-data, body .details-container .hotel-details .bottom-section .hotel-data, .main-container .details-container .hotel-details .bottom-section .hotel-data {
               height: 35vh;
@@ -194,3 +201,123 @@ html, body, .main-container {
               cursor: pointer;
               text-decoration: none;
               text-align: right; }
+        html .details-container .hotel-details .bottom-section .ratings, body .details-container .hotel-details .bottom-section .ratings, .main-container .details-container .hotel-details .bottom-section .ratings {
+          position: relative;
+          height: 37vh;
+          max-height: 37vh;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+          /*@media screen and (max-width: $break-details-card1) {
+            margin-top: 37px;
+          }*/ }
+          html .details-container .hotel-details .bottom-section .ratings .rating-details, body .details-container .hotel-details .bottom-section .ratings .rating-details, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details {
+            height: 5%;
+            display: block; }
+            html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+              font-size: 1.7vw; }
+              @media screen and (max-width: 1199.98px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+                  font-size: 1.8vw; } }
+              @media screen and (max-width: 991.98px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+                  font-size: 2.2vw; } }
+              @media screen and (max-width: 830px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+                  font-size: 2.5vw; } }
+              @media screen and (max-width: 743px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+                  font-size: 3.0vw; } }
+              @media screen and (max-width: 640px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+                  font-size: 3.2vw; } }
+              @media screen and (max-width: 600px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .title, body .details-container .hotel-details .bottom-section .ratings .rating-details .title, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .title {
+                  font-size: 3.4vw; } }
+            html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row {
+              min-height: 70%;
+              margin-top: 8%; }
+              @media screen and (max-width: 991.98px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row {
+                  min-height: 44%;
+                  margin-top: 0; } }
+              @media screen and (max-width: 743px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row {
+                  min-height: 66%; } }
+              @media screen and (max-width: 670px) {
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row {
+                  min-height: 70%; } }
+              html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container {
+                height: 100%;
+                width: 82%;
+                border: 1px solid black;
+                border-radius: 50%;
+                position: relative;
+                margin: 0 auto; }
+                @media screen and (max-width: 991.98px) {
+                  html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container {
+                    height: 110%;
+                    width: 21%; } }
+                @media screen and (max-width: 770px) {
+                  html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container {
+                    height: 114%; } }
+                @media screen and (max-width: 743px) {
+                  html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container {
+                    width: 25%; } }
+                @media screen and (max-width: 670px) {
+                  html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container {
+                    height: 108%;
+                    width: 30%; } }
+                @media screen and (max-width: 620px) {
+                  html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container {
+                    width: 34%; } }
+                html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating {
+                  text-align: center;
+                  font-size: 390%;
+                  padding-top: 17%;
+                  color: #dc3545; }
+                  @media screen and (max-width: 991.98px) {
+                    html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating {
+                      font-size: 300%; } }
+                  @media screen and (max-width: 880px) {
+                    html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating {
+                      font-size: 250%; } }
+                  @media screen and (max-width: 770px) {
+                    html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating {
+                      font-size: 225%; } }
+                  @media screen and (max-width: 670px) {
+                    html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating {
+                      font-size: 237%;
+                      padding-top: 22%; } }
+                  @media screen and (max-width: 620px) {
+                    html .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, body .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating, .main-container .details-container .hotel-details .bottom-section .ratings .rating-details .ratings-row .ratings-container .star-rating {
+                      font-size: 244%;
+                      padding-top: 19%; } }
+          html .details-container .hotel-details .bottom-section .ratings .overlay, body .details-container .hotel-details .bottom-section .ratings .overlay, .main-container .details-container .hotel-details .bottom-section .ratings .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(50, 50, 50, 0.65);
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: .5s ease; }
+          html .details-container .hotel-details .bottom-section .ratings:hover .overlay, body .details-container .hotel-details .bottom-section .ratings:hover .overlay, .main-container .details-container .hotel-details .bottom-section .ratings:hover .overlay {
+            height: 100%; }
+          html .details-container .hotel-details .bottom-section .ratings .text-container, body .details-container .hotel-details .bottom-section .ratings .text-container, .main-container .details-container .hotel-details .bottom-section .ratings .text-container {
+            color: white;
+            font-size: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center; }
+          @media screen and (max-width: 991.98px) {
+            html .details-container .hotel-details .bottom-section .ratings, body .details-container .hotel-details .bottom-section .ratings, .main-container .details-container .hotel-details .bottom-section .ratings {
+              margin-top: 20px;
+              height: 23.8vh;
+              max-height: 25vh; } }
+          @media screen and (max-width: 670px) {
+            html .details-container .hotel-details .bottom-section .ratings, body .details-container .hotel-details .bottom-section .ratings, .main-container .details-container .hotel-details .bottom-section .ratings {
+              height: 26vh;
+              max-height: 28vh; } }

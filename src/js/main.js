@@ -100,8 +100,8 @@ async function runner(runnerObj){
             cuisines: obj.restaurant.cuisines,
             cost_for_two: obj.restaurant.average_cost_for_two,
             image: obj.restaurant.featured_image,
-            online_delivery: (obj.restaurant.has_online_delivery === 0)? 'No': 'Yes',
-            delivering_now: (obj.restaurant.is_delivering_now === 0)? 'No': 'Yes',
+            online_delivery: (obj.restaurant.has_online_delivery !== 0),
+            delivering_now: (obj.restaurant.is_delivering_now !==0),
             thumbnail: obj.restaurant.thumb,
             ratings: obj.restaurant.user_rating.aggregate_rating,
             currency: obj.restaurant.currency,
@@ -138,7 +138,7 @@ async function runner(runnerObj){
                  animation: google.maps.Animation.DROP,
                  id: i,
                  restaurant: hotelDetails[i],
-                 icon: './ff.png'
+                 icon: './restaurant.png'
              });
              markers.push(marker);
              bounds.extend(marker.position);
@@ -154,7 +154,6 @@ async function runner(runnerObj){
     }
 }
 function renderDetails(marker){
-    //document.getElementById("booking").removeEventListener('click', myfunc);
     console.log(marker);
     if(marker.restaurant.image != "") {
         document.getElementById("featured_image").src = marker.restaurant.image;
@@ -172,12 +171,19 @@ function renderDetails(marker){
     document.getElementById("cost").innerHTML = "Cost "+marker.restaurant.currency +
         marker.restaurant.cost_for_two+ " for two";
     document.getElementById("url").href = marker.restaurant.url;
+    document.getElementById("star-rating").innerHTML = marker.restaurant.ratings;
+    if(!marker.restaurant.online_delivery){
+        document.getElementById("online-delivery").innerHTML = "Does not Deliver Online";
+        document.getElementById("delivering-now").style.display = "none";
+    } else{
+        document.getElementById("online-delivery").innerHTML = "Deliver's Online";
+        document.getElementById("delivering-now").style.display = "block";
+        if(!marker.restaurant.delivering_now)
+            document.getElementById("delivering-now").innerHTML = "Not Delivering Now";
+        else
+            document.getElementById("delivering-now").innerHTML = "Delivering Now";
+    }
 
-    /*document.getElementById("booking").addEventListener('click', myfunc(marker.restaurant.url));
-    function myfunc(url){
-        debugger;
-        window.open(url);
-    }*/
 }
 function populateInfoWindow(marker, infowindow) {
     if (infowindow.marker != marker) {
